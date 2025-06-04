@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Roman Civilization 7°A</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+body {
+  font-family: 'Libre Baskerville', serif;
+  background: linear-gradient(to right, #ffe633, #ffbe33, #ffac33);
+  color: #1a1a1a;
+  text-align: center;
+}
+
+    h1 {
+      font-size: 2em;
+      margin: 20px;
+      color: #3c2f1c;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    .contenedor-img {
+      position: relative;
+      display: inline-block;
+    }
+
+    .galeria img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s;
+  border: 3px solid #6e6e6e; /* gris plomo */
+  box-shadow: 0 4px 12px rgba(60, 60, 60, 0.4); /* sombra difusa gris oscuro */
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(60, 60, 60, 0.6);
+}
+
+    .tooltip {
+      visibility: hidden;
+      background-color: rgba(0,0,0,0.8);
+      color: #fff;
+      text-align: center;
+      padding: 5px 10px;
+      border-radius: 6px;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      white-space: nowrap;
+      font-size: 0.9em;
+      transition: visibility 0.2s ease, opacity 0.2s ease;
+      opacity: 0;
+    }
+
+    .contenedor-img:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    model-viewer {
+  width: 600px;
+  height: 500px;
+  margin: 30px auto;
+  display: none;
+  background: linear-gradient(to bottom right, #d3d3d3, #a8a8a8); /* tonos plomo suaves */
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(80, 80, 80, 0.5); /* sombra gris difusa */
+  border: 2px solid #999;
+}
+
+    .visor-activo {
+      display: block;
+    }
+
+    .controles {
+      margin: 15px;
+    }
+
+.controles button {
+  padding: 10px 15px;
+  margin: 5px;
+  background-color: #ccc; /* gris claro */
+  border: 1px solid #888; /* contorno gris oscuro */
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333; /* texto gris oscuro */
+  box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.3); /* sombra tenue */
+  transition: background-color 0.3s ease;
+}
+
+.controles button:hover {
+  background-color: #b0b0b0; /* gris medio al pasar el mouse */
+}  </style>
+</head>
+<body>
+
+  <h1> Roman Civilization  </h1> <img src="img/21.png" alt="escudo" height="150px" widht="180px">
+
+  <div class="galeria">
+    <div class="contenedor-img">
+      <img src="img/1.jpg" alt="Neptuno" height="250" width="300"cambiarModelo('modelos/1.glb', 'audios/1.mp3')" title="Neptuno">
+      <span class="tooltip">Neptuno</span>
+    </div>
+    <div class="contenedor-img">
+      <img src="img/2.jpg" alt="Marte" height="250" width="300"cambiarModelo('modelos/2.glb', 'audios/2.mp3')" title="Marte">
+      <span class="tooltip">Marte</span>
+    </div>
+    <div class="contenedor-img">
+      <img src="img/3.jpg" alt="Hermes" height="250" width="300"cambiarModelo('modelos/3.glb', 'audios/3.mp3')" title="Hermes">
+      <span class="tooltip">Hermes</span>
+    </div>
+    <div class="contenedor-img">
+      <img src="img/4.jpg" alt="Afrodita" height="250" width="300"cambiarModelo('modelos/4.glb', 'audios/4.mp3')" title="Afrodita">
+      <span class="tooltip">Afrodita</span>
+    </div>
+    <div class="contenedor-img">     
+ <img src="img/5.jpg" alt="Atenea"height="250" width="300"cambiarModelo('modelos/5.glb', 'audios/5.mp3')" title="Atenea">
+      <span class="tooltip">Atenea</span>
+    </div>
+    <div class="contenedor-img">
+      <img src="img/6.jpg" alt="Zeus"height="250" width="300"cambiarModelo('modelos/6.glb', 'audios/6.mp3')" title="Zeus">
+      <span class="tooltip">Zeus</span>
+    </div>
+    <div class="contenedor-img">
+      <img src="img/7.jpg" alt="Saturno"height="250" width="300"cambiarModelo('modelos/7.glb', 'audios/modelo7.mp3')" title="Saturno">
+      <span class="tooltip">Saturno</span>
+    </div>
+    <div class="contenedor-img">
+      <img src="img/8.jpg" alt="Mausoleo de agusto"height="250" width="300"cambiarModelo('modelos/8.glb', 'audios/modelo8.mp3')" title="Mausoleo de agusto">
+      <span class="tooltip">Mausoleo de agusto</span>
+    </div>
+    <div class="contenedor-img">
+      <img src="img/9.jpg" alt="Circo maximo"height="250" width="300"cambiarModelo('modelos/9.glb', 'audios/modelo9.mp3')" title="Circo maximo">
+      <span class="tooltip">Circo maximo</span>
+    </div>
+<div class="contenedor-img">
+      <img src="img/10.jpg" alt="Teatro romano"height="250" width="300"cambiarModelo('modelos/10.glb', 'audios/modelo9.mp3')" title="Teatro romano">
+      <span class="tooltip">Teatro romano</span>
+    </div>
+<div class="contenedor-img">
+      <img src="img/11.jpg" alt="Torre de pisa"height="250" width="300"cambiarModelo('modelos/11.glb', 'audios/modelo9.mp3')" title="Torre de pisa">
+      <span class="tooltip">Torre de pisa</span>
+    </div>
+<div class="contenedor-img">
+      <img src="img/12.jpg" alt="Foro de trajano"height="250" width="300"cambiarModelo('modelos/12.glb', 'audios/modelo9.mp3')" title="Foro de trajano">
+      <span class="tooltip">Foro de trajano</span>
+    </div>
+<div class="contenedor-img">
+      <img src="img/13.jpg" alt="Panteon de agripa"height="250" width="300"cambiarModelo('modelos/13.glb', 'audios/modelo9.mp3')" title="Panteon de agripa">
+      <span class="tooltip">Panteon de agripa</span>
+    </div>
+<div class="contenedor-img">
+      <img src="img/14.jpg" alt="Pantenón"height="250" width="300"cambiarModelo('modelos/14.glb', 'audios/modelo9.mp3')" title="Partenón">
+      <span class="tooltip">Partenón</span>
+    </div>
+<div class="contenedor-img">
+      <img src="img/15.jpg" alt="Venus de milo"height="250" width="300"cambiarModelo('modelos/15.glb', 'audios/modelo9.mp3')" title="Venus de milo">
+      <span class="tooltip">Venus de milo</span>
+    </div>
+<div class="contenedor-img">
+      <img src="img/16.jpg" alt="Atila"height="250" width="300"cambiarModelo('modelos/16.glb', 'audios/modelo9.mp3')" title="Atila">
+      <span class="tooltip">Atila</span>
+    </div>
+<div class="contenedor-img">
+      <img src="img/17.jpg" alt="Artemisa"height="250" width="300"cambiarModelo('modelos/17.glb', 'audios/modelo9.mp3')" title="Artemisa">
+      <span class="tooltip">Artemisa</span>
+    </div>
+<div class="contenedor-img">
+      <img src="img/18.jpg" alt="Augusto de prima porta"height="250" width="300"cambiarModelo('modelos/18.glb', 'audios/modelo9.mp3')" title="Augusto de prima porta">
+      <span class="tooltip">Augusto de prima porta</span>
+    </div>
+<div class="contenedor-img">
+      <img src="img/19.jpg" alt="Apolo"height="250" width="300"cambiarModelo('modelos/19.glb', 'audios/modelo9.mp3')" title="Apolo">
+      <span class="tooltip">Apolo</span>
+    </div>
+<div class="contenedor-img">
+      <img src="img/20.jpg" alt="Kore de antenor"height="250" width="300"cambiarModelo('modelos/20.glb', 'audios/modelo9.mp3')" title="Kore de antenor">
+      <span class="tooltip">Kore de antenor</span>
+    </div>
+  </div>
+
+  <!-- Visualizador 3D -->
+  <model-viewer id="visor3d" auto-rotate camera-controls ar shadow-intensity="1"></model-viewer>
+
+  <!-- Audio -->
+  <audio id="audio3d" controls style="margin-top: 10px;"></audio>
+
+  <script>
+    const visor = document.getElementById('visor3d');
+    const audio = document.getElementById('audio3d');
+
+    function cambiarModelo(rutaModelo, rutaAudio) {
+      visor.setAttribute('src', rutaModelo);
+      visor.classList.add('visor-activo');
+
+      audio.src = rutaAudio;
+      audio.play();
+
+      visor.cameraOrbit = "0deg 75deg 2.5m";
+
+      window.scrollTo({ top: visor.offsetTop - 100, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
