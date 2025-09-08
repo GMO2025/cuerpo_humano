@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>proyecto sintesis - curiosidades de los seres vivos 7°A</title>
+  <title>Proyecto síntesis - Curiosidades de los seres vivos 7°A</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 
@@ -23,7 +23,7 @@
 
     .galeria {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 15px;
       max-width: 1000px;
       margin: 20px auto;
@@ -42,6 +42,7 @@
 
     .contenedor-video img {
       width: 100%;
+      height: auto;
       display: block;
     }
 
@@ -62,17 +63,21 @@
 
     #visor video {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      max-height: 70vh;
       border-radius: 12px;
+      background: #000;
     }
 
     .controles {
       margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
 
     .controles button {
       padding: 10px 15px;
-      margin: 5px;
       background-color: #ccc;
       border: 1px solid #888;
       border-radius: 8px;
@@ -89,40 +94,41 @@
 
     .controles input[type="range"] {
       width: 150px;
-      margin-left: 10px;
     }
   </style>
 </head>
 <body>
 
-  
-  <h1>Proyecto sintesis - Curiosidades del cuerpo humano 7°A</h1>
+  <h1>Proyecto síntesis - Curiosidades del cuerpo humano 7°A</h1>
 
   <!-- Galería -->
   <div class="galeria" id="galeria">
-    <div class="contenedor-video" onclick="reproducirVideo('Videos/sistema oseo.mp4')">
-      <img src="img/huesos septimo A.html" alt="Huesos">
+    <div class="contenedor-video" onclick="reproducirVideo('videos/sistema_oseo.mp4')">
+      <img src="img/huesos_septimoA.jpg" alt="Huesos">
     </div>
-    <div class="contenedor-video" onclick="reproducirVideo('videos/Las bacterias septimo a(1).mp4')">
-      <img src="img/bacterias septimo A.jpg" alt="Bacterias">
+    <div class="contenedor-video" onclick="reproducirVideo('videos/bacterias.mp4')">
+      <img src="img/bacterias_septimoA.jpg" alt="Bacterias">
     </div>
-    <div class="contenedor-video" onclick="reproducirVideo('Videos/Musculos.mp4')">
-      <img src="img/musculos septimo A.jpg" alt="Músculos">
+    <div class="contenedor-video" onclick="reproducirVideo('videos/musculos.mp4')">
+      <img src="img/musculos_septimoA.jpg" alt="Músculos">
     </div>
     <div class="contenedor-video" onclick="reproducirVideo('videos/video4.mp4')">
-      <img src="img/locomocion en humanos.webp" alt="Locomoción humana">
+      <img src="img/locomocion_humanos.webp" alt="Locomoción humana">
     </div>
     <div class="contenedor-video" onclick="reproducirVideo('videos/video5.mp4')">
       <img src="img/animales.jpg" alt="Los animales">
     </div>
     <div class="contenedor-video" onclick="reproducirVideo('videos/video6.mp4')">
-      <img src="img/locomocion en animales.webp" alt="Locomoción en animales">
+      <img src="img/locomocion_animales.webp" alt="Locomoción en animales">
     </div>
   </div>
 
   <!-- Visor -->
   <div id="visor">
-    <video id="videoPlayer"></video>
+    <video id="videoPlayer" controls>
+      <source src="" type="video/mp4">
+      Tu navegador no soporta la reproducción de video.
+    </video>
     <div class="controles">
       <button onclick="playVideo()">▶️ Reproducir</button>
       <button onclick="pauseVideo()">⏸️ Pausar</button>
@@ -131,6 +137,7 @@
       <button onclick="forwardVideo()">⏩ +10s</button>
       <label>🔊 Volumen</label>
       <input type="range" min="0" max="1" step="0.05" onchange="setVolume(this.value)">
+      <button onclick="cerrarVisor()">❌ Cerrar</button>
     </div>
   </div>
 
@@ -142,15 +149,9 @@
     function reproducirVideo(src) {
       galeria.style.display = 'none';
       visor.style.display = 'block';
-      videoPlayer.src = src;
+      videoPlayer.querySelector('source').src = src;
+      videoPlayer.load();
       videoPlayer.play();
-
-      // Al terminar vuelve a la galería
-      videoPlayer.onended = () => {
-        stopVideo();
-        visor.style.display = 'none';
-        galeria.style.display = 'grid';
-      };
     }
 
     function playVideo() {
@@ -167,15 +168,21 @@
     }
 
     function rewindVideo() {
-      videoPlayer.currentTime -= 10;
+      videoPlayer.currentTime = Math.max(0, videoPlayer.currentTime - 10);
     }
 
     function forwardVideo() {
-      videoPlayer.currentTime += 10;
+      videoPlayer.currentTime = Math.min(videoPlayer.duration, videoPlayer.currentTime + 10);
     }
 
     function setVolume(value) {
       videoPlayer.volume = value;
+    }
+
+    function cerrarVisor() {
+      stopVideo();
+      visor.style.display = 'none';
+      galeria.style.display = 'grid';
     }
   </script>
 
